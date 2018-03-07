@@ -1,0 +1,27 @@
+<%= form_with(model: meth, local: true) do |form| %>
+  <% if meth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meth.errors.count, "error") %> prohibited this meth from being saved:</h2>
+
+      <ul>
+      <% meth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :program_id %>
+    <%= form.number_field :program_id, id: :meth_program_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :meth_description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

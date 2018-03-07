@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Programs</h1>
+
+<table style="text-align: center; padding:10px">
+  <thead>
+    <tr style="margin: 10px">
+      <th>Id</th>
+      <th>Name</th>
+      <th>MethodId</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><%= program.id %></td>
+        <td><%= program.name %></td>
+        <% @method.each do |meth| %>
+          <td><%= meth.program_id %></td>
+          <td><%= meth.description %></td>
+        <% end %>
+
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Meths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Program</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meths.each do |meth| %>
+      <tr>
+        <td><%= meth.program_id %></td>
+        <td><%= meth.description %></td>
+        <td><%= link_to 'Show', meth %></td>
+        <td><%= link_to 'Edit', edit_meth_path(meth) %></td>
+        <td><%= link_to 'Destroy', meth, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meth', new_meth_path %>

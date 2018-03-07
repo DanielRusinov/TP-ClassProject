@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @meth.program_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @meth.description %>
+</p>
+
+<%= link_to 'Edit', edit_meth_path(@meth) %> |
+<%= link_to 'Back', meths_path %>
